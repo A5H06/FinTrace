@@ -1,0 +1,86 @@
+{
+  "model_name": "FinTrace Hybrid AP Fraud Model",
+  "model_version": "1.0.0",
+  "classifier_backend": "xgboost",
+  "test_rows": 1500,
+  "fraud_prevalence": 0.218,
+  "scale_pos_weight": 3.5863914373088686,
+  "weights": {
+    "xgboost": 0.7,
+    "isolation_forest": 0.3
+  },
+  "metrics_at_0_50": {
+    "threshold": 0.5,
+    "accuracy": 0.972,
+    "precision": 0.9581993569131833,
+    "recall": 0.9113149847094801,
+    "f1_score": 0.9341692789968652,
+    "roc_auc": 0.9558360772842578,
+    "average_precision": 0.9229468293808915,
+    "confusion_matrix_labels_0_1": [
+      [
+        1160,
+        13
+      ],
+      [
+        29,
+        298
+      ]
+    ],
+    "classification_report": {
+      "legitimate": {
+        "precision": 0.975609756097561,
+        "recall": 0.9889173060528559,
+        "f1-score": 0.9822184589331076,
+        "support": 1173.0
+      },
+      "fraud": {
+        "precision": 0.9581993569131833,
+        "recall": 0.9113149847094801,
+        "f1-score": 0.9341692789968652,
+        "support": 327.0
+      },
+      "accuracy": 0.972,
+      "macro avg": {
+        "precision": 0.9669045565053721,
+        "recall": 0.950116145381168,
+        "f1-score": 0.9581938689649864,
+        "support": 1500.0
+      },
+      "weighted avg": {
+        "precision": 0.9718142890753666,
+        "recall": 0.972,
+        "f1-score": 0.9717437377070067,
+        "support": 1500.0
+      }
+    }
+  },
+  "firewall_operations": {
+    "approve_count": 1178,
+    "hold_count": 16,
+    "block_count": 306,
+    "flagged_as_hold_or_block_count": 322,
+    "confusion_matrix_labels_0_1_at_0_35": [
+      [
+        1149,
+        24
+      ],
+      [
+        29,
+        298
+      ]
+    ],
+    "hard_rule_trigger_count": 70
+  },
+  "component_summary": {
+    "xgboost_probability_mean": 0.22344296734589927,
+    "isolation_anomaly_score_mean": 0.5091399677724064,
+    "composite_risk_mean": 0.30915206747385143,
+    "composite_risk_p95": 0.9651726922492202
+  },
+  "dataset_source": "C:\\Users\\Ashish\\OneDrive\\Desktop\\ibm\\fintrace_ibm_project\\data\\Procurement_Invoice_Fraud_Master.xlsx",
+  "evaluation_timestamp_utc": "2026-10-17T19:04:28.087467+00:00",
+  "data_rows": 7499,
+  "data_columns": 21,
+  "demo_mode": false
+}
